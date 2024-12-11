@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+python-telegram-bot = "*"
+langchain = "*"
+pydotenv = "*"
+python-dotenv = "*"
+langchain-openai = "*"
+langchain-pinecone = "*"
+langchainhub = "*"
+langchain-community = "*"
+pypdf = "*"
+pymupdf4llm = "*"
+sentence-transformers = "*"
+
+[dev-packages]
+ipykernel = "*"
+
+[requires]
+python_version = "3.12"
