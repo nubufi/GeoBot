@@ -37,12 +37,7 @@ async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
 
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    message_type: str = update.message.chat.type
     text: str = update.message.text
-
-    print(
-        f"User {update.effective_user.first_name} sent a message of type {message_type} with text {text}"
-    )
 
     if text == "/start":
         await start_command(update, context)

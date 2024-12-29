@@ -1,32 +1,35 @@
-import pymupdf4llm as pm
 from langchain.docstore.document import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter, Language
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain_pinecone.vectorstores import PineconeVectorStore
+from langchain_openai import AzureOpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
+embeddings = AzureOpenAIEmbeddings(
+        azure_endpoint=os.getenv('AZURE_OPENAI_EMBEDDING_ENDPOINT'),
+        api_version="2023-05-15"
+)
+
+def read_file(file_name):
+    with open("markdowns/"+file_name, 'r') as file:
+        content= file.read()
+        document = Document(page_content=content, metadata={"source": file_name})
+
+    return [document]
+
+text_splitter = RecursiveCharacterTextSplitter.from_language(
+    Language.MARKDOWN, chunk_size=5000, chunk_overlap=1000
+)
+
+def save_vector(file_head):
+    document = read_file(file_head+".md")
+    docs = text_splitter.split_documents(document)
+    vector_store = FAISS.from_documents(docs, embeddings)
+    vector_store.save_local(f"vector_stores/tbdy/{file_head}.faiss")
+
 if __name__ == "__main__":
-    print("Ingesting...")
-    md_text = pm.to_markdown("src/data/tbdy2018.pdf")
-    document = Document(page_content=md_text, metadata={"source": "tbdy2018.pdf"})
-
-    print("splitting...")
-    text_splitter = RecursiveCharacterTextSplitter.from_language(
-        Language.MARKDOWN, chunk_size=10000, chunk_overlap=1000
-    )
-    texts = text_splitter.split_documents([document])
-    print(f"created {len(texts)} chunks")
-
-    model_name = "sentence-transformers/all-mpnet-base-v2"
-    model_kwargs = {"device": "cpu"}
-    encode_kwargs = {"normalize_embeddings": False}
-    hf = HuggingFaceEmbeddings(
-        model_name=model_name, model_kwargs=model_kwargs, encode_kwargs=encode_kwargs
-    )
-
-    print("ingesting...")
-    PineconeVectorStore.from_documents(texts, hf, index_name=os.environ["INDEX_NAME"])
-    print("finish")
+    for f in os.listdir("markdowns"):
+        if f.endswith(".md"):
+            save_vector(f[:-3])
