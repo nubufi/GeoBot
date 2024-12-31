@@ -1,8 +1,8 @@
 from langchain_core.prompts import ChatPromptTemplate
-from llm.output_parsers.list_output_parser import ListOutputParser
 from langchain_openai import AzureChatOpenAI
 from pydantic import BaseModel, Field
 from typing import List
+
 def get_content():
     with open("data/contents.md", "r") as f:
         content = f.read()
