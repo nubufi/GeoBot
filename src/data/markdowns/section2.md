@@ -1,22 +1,20 @@
+**2.2** DEPREM YER HAREKETİ DÜZEYLERİ
 **2.2.1. Deprem Yer Hareketi Düzeyi-1 (DD-1)**
 DD-1 Deprem Yer Hareketi, spektral büyüklüklerin 50 yılda aşılma olasılığının %2 ve buna
 karşı gelen tekrarlanma periyodunun 2475 yıl olduğu çok seyrek deprem yer hareketini
 nitelemektedir. Bu deprem yer hareketi, gözönüne alınan en büyük deprem yer hareketi olarak
 da adlandırılmaktadır.
 
----
 **2.2.2. Deprem Yer Hareketi Düzeyi-2 (DD-2)**
 DD-2 Deprem Yer Hareketi, spektral büyüklüklerin 50 yılda aşılma olasılığının %10 ve buna
 karşı gelen tekrarlanma periyodunun 475 yıl olduğu seyrek deprem yer hareketini
 nitelemektedir. Bu deprem yer hareketi, standart tasarım deprem yer hareketi olarak da
 adlandırılmaktadır.
 
----
 **2.2.3. Deprem Yer Hareketi Düzeyi-3 (DD-3)**
 DD-3 Deprem Yer Hareketi, spektral büyüklüklerin 50 yılda aşılma olasılığının %50 ve buna
 karşı gelen tekrarlanma periyodunun 72 yıl olduğu sık deprem yer hareketini nitelemektedir.
 
----
 **2.2.4. Deprem Yer Hareketi Düzeyi-4 (DD-4)**
 DD-4 Deprem Yer Hareketi, spektral büyüklüklerin 50 yılda aşılma olasılığının %68 (30 yılda
 aşılma olasılığı %50) ve buna karşı gelen tekrarlanma periyodunun 43 yıl olduğu çok sık deprem
@@ -30,7 +28,6 @@ sönüm oranı için, **2.3.2, 2.3.3, 2.3.4** ve 2.3.5’te açıklandığı üz
 katsayıları’na ve yerel zemin etki katsayıları’na bağlı olarak standart biçimde veya 2.4.1’e göre
 sahaya özel deprem tehlikesi analizleri ile özel olarak tanımlanırlar.
 
----
 **2.3.2. Harita Spektral İvme Katsayıları ve Tasarım Spektral İvme Katsayıları**
 
 **2.3.2.1 –** Boyutsuz harita spektral ivme katsayıları, 2.2’de belirtilen dört farklı deprem yer
@@ -49,18 +46,16 @@ yerçekimi ivmesine bölünmesi ile boyutsuz katsayılar olarak tanımlanmışt�
 tasarım spektral ivme katsayıları SDS ve SD1 ’e dönüştürülür:
 
 Denk. (2.1) $$S_{DS} = S_SF_S$$
-Denkç (2.1) $$S_{D1} = S_1F_1$$
+Denk. (2.1) $$S_{D1} = S_1F_1$$
 
 Burada FS ve F1 **2.3.3’te tanımlanan yerel zemin etki katsayıları’nı göstermektedir.**
 
 **2.3.2.3** Yatay ve düşey elastik tasarım spektrumları, **Denk.(2.1) ile elde edilen** tasarım
 spektral ivme katsayıları’ndan yararlanılarak, sırası ile, 2.3.4 ve 2.3.5’te tanımlanmıştır.
 
----
 **2.3.3. Yerel Zemin Etki Katsayıları**
 
 **2.3.3.1 – 16.4’te tanımlanan yerel zemin sınıfları’na bağlı olarak yerel zemin etki katsayıları**
-
 FS ve F1, sırası ile, Tablo 2.1 ve Tablo 2.2’de verilmiştir. Tablolarda harita spektral ivme katsayılarının ara değerleri için doğrusal enterpolasyon yapılabilir.
 
 **Tablo 2.1 – Kısa periyot bölgesi için Yerel Zemin Etki Katsayıları**
@@ -93,81 +88,48 @@ ivme spektrumu’nun ordinatları olan yatay elastik tasarım spektral ivmeleri 
 titreşim periyoduna bağlı olarak yerçekimi ivmesi [g] cinsinden Denk.(2.2)’de tanımlanmıştır
 (Şekil 2.1):
 
-
- T 
-
-Sae ( )T =  0.4 + 0.6  SDS (0 ≤ T ≤ TA )
-
- TA 
-
-Sae ( )T = SDS (TA ≤ T ≤ TB )
-
-Sae ( )T = SD1 (TB ≤ T ≤ TL )
-T
-Sae ( )T = SD1T 2TL (TL ≤ T )
+$$
+Denk. (2.2) S_{ae}(T) = (0.4 + 0.6 \frac{T}{T_A})S_{DS}    (0 \leq T \leq T_A)
+Denk. (2.2) S_{ae}(T) = S_{DS}    (T_A \leq T \leq T_B)
+Denk. (2.2) S_{ae}(T) = \frac{S_{D1}}{T}    (T_B \leq T \leq T_L)
+Denk. (2.2) S_{ae}(T) = \frac{S_{D1}T_L}{T^2}    (T_B \leq T \leq T_L)
+$$
 
 Burada SDS ve SD1 **2.3.2.2’de tanımlanan tasarım spektral ivme katsayıları’nı,** T ise doğal
 titreşim periyodunu göstermektedir. Yatay tasarım spektrumu köşe periyotları TA ve TB
 **Denk.(2.3) ile** SDS ve SD1 ’e bağlı olarak tanımlanır:
 
-TA = 0.2 SD1 ;    TB = SD1 **(2.3)**
-SDS SDS
-
-Sabit yerdeğiştirme bölgesine geçiş periyodu TL = 6 s alınacaktır.
-
------
+Denk. (2.3) $$T_A = 0.2\frac{S_{D1}}{S_{DS}} ;  TB = \frac{S_{D1}}{S_{DS}$$
+Sabit yerdeğiştirme bölgesine geçiş periyodu T_L = 6 s alınacaktır.
 
 **2.3.4.2 – Gözönüne alınan herhangi bir deprem yer hareketi düzeyi için yatay elastik tasarım**
 yerdeğiştirme spektrumu’nun ordinatları olan yatay elastik tasarım spektral yerdeğiştirmeleri
 
-Sde [( )]T, doğal titreşim periyoduna bağlı olarak metre [m] cinsinden Denk.(2.4) ile tanımlanır
-**(Şekil 2.2):**
+S_{de}(T), doğal titreşim periyoduna bağlı olarak metre cinsinden Denk.(2.4) ile tanımlanır
 
-
-T 2
-Sde ( )T = 4π2 g Sae ( )T
-
-**Şekil 2.2**
+Denk. (2.4) $$S_{de}(T)=\frac{T^2}{4\pi^2}gS_{ae}(T)$$
 
 **2.3.5. Düşey Elastik Tasarım Spektrumu**
-
-
-**(2.4)**
-
 
 Gözönüne alınan herhangi bir deprem yer hareketi düzeyi için düşey elastik tasarım ivme
 spektrumu’nun ordinatları olan düşey elastik tasarım spektral ivmeleri SaeD [( )]T, yatay deprem
 yer hareketi için tanımlanan kısa periyot tasarım spektral ivme katsayısına ve doğal titreşim
 periyoduna bağlı olarak yerçekimi ivmesi [g] cinsinden Denk.(2.5) ile tanımlanır (Şekil 2.3):
 
-
- T 
-
-SaeD ( )T =  0.32 + 0.48  SDS (0 ≤ T ≤ TAD)
-
- TAD 
-
-SaeD ( )T = 0.8 SDS (TAD ≤ T ≤ TBD)
-
-SaeD ( )T = 0.8 SDS TBD (TBD ≤ T ≤ TLD)
-T
-
-
-**(2.5)**
-
+$$
+Denk. (2.5) S_{aeD}(T) = (0.32 + 0.48\frac{T}{T_{AD}})S_{DS}  (0 \leq T \leq T_{AD})
+Denk. (2.5) S_{aeD}(T) = 0.8 S_{DS} (T_{AD} \leq T \leq T_{BD})
+Denk. (2.5) S_{aeD}(T) = 0.8 S_{DS} \frac{T_{BD}}{T} (T_{BD} \leq T \leq T_{LD})
+$$
 
 **Denk.(2.5)’te yer alan** TAD ve TBD düşey spektrum köşe periyotları ile TLD periyodu
 **Denk.(2.6)’da** verilmiştir.
 
-TAD = TA ;   TBD = TB ;   TLD = TL **(2.6)**
-3 3 2
+Denk. (2.6) $$T_{AD} = T_A ;   T_{BD} = T_B ;   T_{LD} = T_L$$
 
------
-
+---
 **2.4. SAHAYA ÖZEL DEPREM YER HAREKETİ SPEKTRUMU**
-
 **2.4.1. Sahaya Özel Elastik İvme Spektrumu**
-
 **2.4.1.1 – Bazı özel durumlarda, sahaya özel deprem tehlikesi analizleri ile sahaya özel deprem**
 yer hareketi spektrumları tanımlanabilir. Bu tür spektrumlar proje mühendisinin tercihine bağlı
 olarak her durumda kullanılabilir.
@@ -176,11 +138,11 @@ olarak her durumda kullanılabilir.
 **2.3.5’te tanımlanan tasarım spektrumu ordinatlarının % 90’ından daha küçük olmayacaktır.**
 
 **2.4.2. Sahaya Özel Zemin Davranış Analizleri**
-
 **16.4’e göre yapılan yerel zemin sınıflandırmasında ZF sınıfı olarak tanımlanan zeminlerde**
 **16.5’e göre** sahaya özel zemin davranış analizleri yapılacaktır. Bu tür analizler, proje
 mühendisinin tercihine bağlı olarak diğer sınıflardaki zeminlerde de yapılabilir.
 
+---
 **2.5. ZAMAN TANIM ALANINDA DEPREM YER HAREKETLERİNİN**
 **TANIMLANMASI**
 
@@ -197,8 +159,6 @@ deprem kayıtlarının seçimi, tasarıma esas deprem yer hareketi düzeyi ile u
 büyüklükleri, fay uzaklıkları, kaynak mekanizmaları ve yerel zemin koşulları dikkate alınarak
 yapılacaktır. Binanın bulunduğu bölgede tasarıma esas deprem yer hareketi düzeyi ile uyumlu
 geçmiş deprem kayıtlarının mevcut olması durumunda öncelikle bu kayıtlar kullanılacaktır.
-
------
 
 Sahaya özel deprem tehlikesine en fazla katkıda bulunan depremlere ait büyüklük ve fay
 uzaklığı bilgilerinin belirlenmesi için deprem tehlikesi ayrıştırma işleminden yararlanılabilir.
@@ -250,7 +210,7 @@ sağlanacak şekilde dönüştürülmesi ile de elde edilebilir. Dönüştürül
 hareketlerinin spektrumlarının ortalamaları, tüm periyotlar için tasarım spektrumu
 ordinatlarından daha küçük olmayacaktır.
 
------
+---
 
 **2.6. BİNALARA İVME KAYITÇILARININ YERLEŞTİRİLMESİ**
 
@@ -259,3 +219,5 @@ tarafından veya Başkanlık koordinasyonunda diğer kamu kurumları veya ünive
 kuruluşlarınca kuvvetli deprem hareketinin ölçülmesi amacı ile kamu, özel ve tüzel kişilere ait
 binalara, diğer yapılara veya açık alanlarına ivme kayıtçılarının yerleştirilmesine izin verilecek,
 bina veya yapı sahipleri ya da işletmecileri bunların korunmasından sorumlu olacaktır.
+
+--
